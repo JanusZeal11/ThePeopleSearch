@@ -101,7 +101,9 @@ namespace ThePeopleSearch.Controllers
                 return NotFound();
             }
 
-            _context.Persons.Remove(person);
+            // Fake database delete to keep historical data
+            _context.Persons.Where(b => b.Id == id)
+                .FirstOrDefault().IsActive = false;
             await _context.SaveChangesAsync();
 
             return person;
