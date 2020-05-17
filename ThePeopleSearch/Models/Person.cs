@@ -17,6 +17,8 @@ namespace ThePeopleSearch.Models
         public string PostalCode { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string Interests { get; set; }
+        public int Age { get; set; }
         public string ImageName { get; set; }
         public byte[] ImageData { get; set; }
     }

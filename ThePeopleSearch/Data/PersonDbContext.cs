@@ -38,6 +38,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1234",
                         Email = "elmo@mail.com",
+                        Interests = "Wasabi,Positivity,Dorthy,Tricycle",
+                        Age = 3,
                         ImageName = "Elmo.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\Elmo.jpg")
                     });
@@ -55,6 +57,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1235",
                         Email = "cookie.monster@mail.com",
+                        Interests = "Cookies,Cookie Dough,Cookies,Bakeries,Cookies",
+                        Age = 47,
                         ImageName = "CookieMonster.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\CookieMonster.jpg")
                     });
@@ -72,6 +76,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1236",
                         Email = "big.bird@mail.com",
+                        Interests = "Alphabet,Life,Numbers",
+                        Age = 6,
                         ImageName = "BigBird.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\BigBird.jpg")
                     });
@@ -89,6 +95,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1237",
                         Email = "bert@mail.com",
+                        Interests = "W,Bernice,Paper Clips,Bottlecaps",
+                        Age = 7,
                         ImageName = "Bert.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\Bert.jpg")
                     });
@@ -106,6 +114,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1238",
                         Email = "count.von.count@mail.com",
+                        Interests = "Counting,Bats,Pipe Organ",
+                        Age = 6525782,
                         ImageName = "CountvonCount.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\CountvonCount.jpg")
                     });
@@ -123,6 +133,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1239",
                         Email = "grover@mail.com",
+                        Interests = "Helping People,Theater,Music",
+                        Age = 4,
                         ImageName = "Grover.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\Grover.jpg")
                     });
@@ -140,6 +152,8 @@ namespace ThePeopleSearch.Data
                         PostalCode = "12345",
                         Phone = "555-555-1240",
                         Email = "OscarGrouch@mail.com",
+                        Interests = "Slimy,Napping,Trash",
+                        Age = 43,
                         ImageName = "OscarGrouch.jpg",
                         ImageData = File.ReadAllBytes(@"~\..\Assets\Images\OscarGrouch.jpg")
                     });

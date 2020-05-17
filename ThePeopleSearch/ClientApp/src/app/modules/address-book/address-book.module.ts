@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {
   MatToolbarModule,
@@ -39,6 +39,7 @@ const routes: Routes = [
   ],
   providers: [
     AddressBookService,
+    DecimalPipe,
   ]
 })
 export class AddressBookModule { }

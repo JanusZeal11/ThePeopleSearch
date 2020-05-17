@@ -30,7 +30,7 @@ namespace ThePeopleSearch.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPersons()
         {
-            return await _context.Persons.ToListAsync();
+            return await _context.Persons.Where(person => person.IsActive).ToListAsync();
         }
 
         // GET: api/People/5
@@ -39,7 +39,7 @@ namespace ThePeopleSearch.Controllers
         {
             var person = await _context.Persons.FindAsync(id);
 
-            if (person == null)
+            if (person == null || !person.IsActive)
             {
                 return NotFound();
             }
