@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
+
+td img {
+    max-width: 75px;
+}
+
+.hoz-center {
+    text-align: center;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.paginator-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.fab-button {
+    top: 5em;
+    right: 5em;  
+    position: fixed;
+    z-index: 998;
+}
+
+.mat-icon {
+    color: white;
+}
+.mat-icon:hover {
+  color: #69F0AE;
+}
