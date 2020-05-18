@@ -10,6 +10,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      dotnet-working-directory: ./ThePeopleSearch
+      dotnet-test-directory: ./ThePeopleSearch_Test
+      angular-working-directory: ./ThePeopleSearch/ClientApp
 
     steps:
     - uses: actions/checkout@v2
@@ -19,7 +23,10 @@ jobs:
         dotnet-version: 3.1.101
     - name: Install dependencies
       run: dotnet restore
+      working-directory: ${{env.dotnet-working-directory}}
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
+      working-directory: ${{env.dotnet-working-directory}}
+    - name: Test .Net
       run: dotnet test --no-restore --verbosity normal
+      working-directory: ${{env.dotnet-test-directory}}    
