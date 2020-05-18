@@ -1,5 +1,8 @@
 # ThePeopleSearch
 
+![.NET Core](https://github.com/JanusZeal11/ThePeopleSearch/workflows/.NET%20Core/badge.svg)
+![Angular](https://github.com/JanusZeal11/ThePeopleSearch/workflows/Angular/badge.svg)
+
 A simple web based address book written in .net CORE with Angular and Entity Framework CORE.
 
 ## Installation
