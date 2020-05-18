@@ -1,0 +1,42 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      dotnet-working-directory: ./ThePeopleSearch
+      dotnet-test-directory: ./ThePeopleSearch_Test
+      angular-working-directory: ./ThePeopleSearch/ClientApp
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm ci and npm run build
+        run: |
+          npm ci
+          npm run build:ci
+        working-directory: ${{env.angular-working-directory}}
+      - name: Test Angular
+        run: npm run test-headless
+        working-directory: ${{env.angular-working-directory}}
