@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-![Build](https://github.com/JanusZeal11/ThePeopleSearch/workflows/Build/badge.svg)
+![Angular](https://github.com/JanusZeal11/ThePeopleSearch/workflows/Angular/badge.svg)
 ![.NET Core](https://github.com/JanusZeal11/ThePeopleSearch/workflows/.NET%20Core/badge.svg)
 
 ## Development server
