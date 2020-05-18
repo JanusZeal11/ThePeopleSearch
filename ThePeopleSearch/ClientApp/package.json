@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
+    "clean": "rimraf ./dist",
     "start": "ng serve",
     "build": "ng build",
     "build:ssr": "ng run ThePeopleSearch:server:dev",
-    "test": "ng test",
-    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "build:ci": "npm run clean && npm run test && npm run build:prod",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:watch": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -51,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "puppeteer": "^3.0.4",
     "typescript": "3.5.3"
   },
   "optionalDependencies": {
