@@ -38,5 +38,5 @@ jobs:
           npm run build:ci
         working-directory: ${{env.angular-working-directory}}
       - name: Test Angular
-        run: npm run test
+        run: npm run test-headless
         working-directory: ${{env.angular-working-directory}}
