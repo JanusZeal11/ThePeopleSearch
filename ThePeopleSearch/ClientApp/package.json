@@ -6,6 +6,7 @@
     "clean": "rimraf ./dist",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "npm build --prod",
     "build:ssr": "ng run ThePeopleSearch:server:dev",
     "build:ci": "npm run clean && npm run test && npm run build:prod",
     "test": "ng test --watch=false --browsers=ChromeHeadless",
