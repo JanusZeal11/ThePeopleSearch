@@ -4,7 +4,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-    <button mat-fab color="primary" aria-label="Add Person" title="Add Person" class="fab-button">
+    <button mat-fab color="primary" aria-label="Add Person" title="Add Person" class="fab-button text-light" (click)="onAdd()">
         <mat-icon>add</mat-icon>
     </button>
     
@@ -40,8 +40,15 @@
             <td mat-cell *matCellDef="let element">{{element.age | number}}</td>
         </ng-container>
 
+        <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button (click)="onDetails(element.id)">Details</button>
+            </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" title="View Profile"></tr>
     </table>
 
     <mat-paginator class="paginator-centered" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

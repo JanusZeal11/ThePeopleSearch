@@ -58,6 +58,15 @@ namespace ThePeopleSearch.Controllers
                 return BadRequest();
             }
 
+            person.IsActive = true;
+            var local = _context.Set<Person>()
+                .Local
+                .FirstOrDefault(entry => entry.Id.Equals(id));
+            if (local != null)
+            {
+                // detach
+                _context.Entry(local).State = EntityState.Detached;
+            }
             _context.Entry(person).State = EntityState.Modified;
 
             try
@@ -85,6 +94,7 @@ namespace ThePeopleSearch.Controllers
         [HttpPost]
         public async Task<ActionResult<Person>> PostPerson(Person person)
         {
+            person.IsActive = true;
             _context.Persons.Add(person);
             await _context.SaveChangesAsync();
 

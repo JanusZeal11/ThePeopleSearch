@@ -1,0 +1,18 @@
+.right {
+    float:right;
+}
+
+.mat-card-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mat-card-content>div {
+    flex-grow: 1;
+    width: 33%;
+    height: 100%;
+}
+
+.mat-card-content>div>div {
+    margin-left: 30px;
+}

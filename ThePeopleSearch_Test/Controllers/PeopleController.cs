@@ -39,17 +39,16 @@ namespace ThePeopleSearch_Test
                 {
                     context.Persons.Add(new Person
                     {
+                        IsActive = true,
                         FirstName = "John",
                         LastName = "Doe",
                         Address = "123 Main St",
                         City = "Anytown",
                         State = "AA",
                         PostalCode = "11111",
-                        Phone = "555-555-5555",
-                        Email = "john.doe@email.com",
                         ImageName = "profile.png",
                         ImageData = null,
-                    });
+                    });;
                     context.SaveChanges();
                 }
                 var peopleController = new PeopleController(new NullLogger<PeopleController>(), context);
@@ -78,14 +77,13 @@ namespace ThePeopleSearch_Test
                 {
                     context.Persons.Add(new Person
                     {
+                        IsActive = true,
                         FirstName = "John",
                         LastName = "Doe",
                         Address = "123 Main St",
                         City = "Anytown",
                         State = "AA",
                         PostalCode = "11111",
-                        Phone = "555-555-5555",
-                        Email = "john.doe@email.com",
                         ImageName = "profile.png",
                         ImageData = null,
                     });
@@ -104,8 +102,6 @@ namespace ThePeopleSearch_Test
                 Assert.AreEqual("Anytown", result.Value.City);
                 Assert.AreEqual("AA", result.Value.State);
                 Assert.AreEqual("11111", result.Value.PostalCode);
-                Assert.AreEqual("555-555-5555", result.Value.Phone);
-                Assert.AreEqual("john.doe@email.com", result.Value.Email);
                 Assert.AreEqual("profile.png", result.Value.ImageName);
                 Assert.AreEqual(null, result.Value.ImageData);
             }
@@ -117,6 +113,7 @@ namespace ThePeopleSearch_Test
         public async Task PutPerson()
         {
             // Arrange
+            var id = 0;
             var options = new DbContextOptionsBuilder<PersonDbContext>()
                 .UseInMemoryDatabase(databaseName: "TPSDatabase")
                 .Options;
@@ -126,39 +123,42 @@ namespace ThePeopleSearch_Test
                 {
                     context.Persons.Add(new Person
                     {
+                        IsActive = true,
                         FirstName = "John",
                         LastName = "Doe",
                         Address = "123 Main St",
                         City = "Anytown",
                         State = "AA",
                         PostalCode = "11111",
-                        Phone = "555-555-5555",
-                        Email = "john.doe@email.com",
                         ImageName = "profile.png",
                         ImageData = null,
                     });
                     context.SaveChanges();
                 }
+                id = context.Persons
+                    .AsNoTracking()
+                    .Where(b => b.FirstName == "John" && b.LastName == "Doe").FirstOrDefault().Id;
                 var peopleController = new PeopleController(new NullLogger<PeopleController>(), context);
 
                 // Act
-                var result = await peopleController.PutPerson(1, new Person
+                var result = await peopleController.PutPerson(id, new Person
                 {
-                    Id = 1,
+                    Id = id,
+                    IsActive = true,
                     FirstName = "Jane",
                     LastName = "Doe",
                     Address = "123 Main St",
                     City = "Anytown",
                     State = "AA",
                     PostalCode = "11111",
-                    Phone = "555-555-5555",
-                    Email = "john.doe@email.com",
                     ImageName = "profile.png",
                     ImageData = null,
                 });
 
                 // Assert
-                Assert.IsNotNull(context.Persons.Where(b => b.FirstName == "Jane").FirstOrDefault());
+                Assert.IsNotNull(context.Persons
+                    .AsNoTracking()
+                    .Where(b => b.FirstName == "Jane").FirstOrDefault());
             }
 
             await Task.CompletedTask;
@@ -178,15 +178,12 @@ namespace ThePeopleSearch_Test
                 // Act
                 var result = await peopleController.PostPerson(new Person
                 {
-
                     FirstName = "Sam",
                     LastName = "Doe",
                     Address = "123 Main St",
                     City = "Anytown",
                     State = "AA",
                     PostalCode = "11111",
-                    Phone = "555-555-5555",
-                    Email = "john.doe@email.com",
                     ImageName = "profile.png",
                     ImageData = null,
                 });
@@ -212,14 +209,14 @@ namespace ThePeopleSearch_Test
                 {
                     context.Persons.Add(new Person
                     {
+                        Id = 1,
+                        IsActive = true,
                         FirstName = "Sally",
                         LastName = "Doe",
                         Address = "123 Main St",
                         City = "Anytown",
                         State = "AA",
                         PostalCode = "11111",
-                        Phone = "555-555-5555",
-                        Email = "john.doe@email.com",
                         ImageName = "profile.png",
                         ImageData = null,
                     });

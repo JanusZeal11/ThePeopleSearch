@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Remove Confirmation</h1>
+<div mat-dialog-content>
+  <p>Are you sure you want to remove {{data.fullName}}?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true">DELETE</button>
+</div>

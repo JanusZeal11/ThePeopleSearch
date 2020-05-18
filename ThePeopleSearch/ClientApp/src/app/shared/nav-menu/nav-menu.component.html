@@ -1,7 +1,21 @@
 <header>
   <mat-toolbar color="primary">
     <div class="container">
-      <a class="navbar-brand title" [routerLink]="['/']">The People Search</a>
+      <a class="navbar-brand text-light" [routerLink]="['/']">The People Search</a>
+    </div>
+    <div
+      class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+      [ngClass]="{ show: isExpanded }"
+    >
+      <ul class="navbar-nav flex-grow">
+        <li
+          class="nav-item"
+          [routerLinkActive]="['link-active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-light" [routerLink]="['/']">Home</a>
+        </li>
+      </ul>
     </div>
   </mat-toolbar>
 </header>

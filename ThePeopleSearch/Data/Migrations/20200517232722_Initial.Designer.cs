@@ -9,8 +9,8 @@ using ThePeopleSearch.Data;
 namespace ThePeopleSearch.Data.Migrations
 {
     [DbContext(typeof(PersonDbContext))]
-    [Migration("20200516050207_AddPersonStatus")]
-    partial class AddPersonStatus
+    [Migration("20200517232722_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,10 +27,10 @@ namespace ThePeopleSearch.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("City")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
@@ -42,13 +42,13 @@ namespace ThePeopleSearch.Data.Migrations
                     b.Property<string>("ImageName")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Interests")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PostalCode")

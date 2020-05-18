@@ -23,11 +23,17 @@ After that, open the site [The People Search](https://github.com/JanusZeal11/The
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Future Improvements
+
+* Profile Image File Upload
+* Add detailed validators to Editor form group
+* Consider using state codes vs. enterable state
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Arthors
+## Authors
 
 * **Arthur Newman** - *Initial work*
 

@@ -5,6 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddressBookService } from './address-book.service';
 
 import { Person } from '../models/person.model';
+import { environment } from 'src/environments/environment';
 
 describe('AddressBookService', () => {
   let httpMock: HttpTestingController;
@@ -42,8 +43,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       },
@@ -55,8 +56,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       },
@@ -67,7 +68,7 @@ describe('AddressBookService', () => {
       expect(people).toEqual(dummyPeople);
     });
 
-    const req = httpMock.expectOne(`${service.API_URL}/api/People`);
+    const req = httpMock.expectOne(`${environment.api_url}/api/People`);
     expect(req.request.method).toBe('GET');
     req.flush(dummyPeople);
   });
@@ -81,8 +82,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       };
@@ -91,7 +92,7 @@ describe('AddressBookService', () => {
       expect(person).toEqual(dummyPerson);
     });
 
-    const req = httpMock.expectOne(`${service.API_URL}/api/People/1`);
+    const req = httpMock.expectOne(`${environment.api_url}/api/People/1`);
     expect(req.request.method).toBe('GET');
     req.flush(dummyPerson);
   });
@@ -104,8 +105,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       };
@@ -116,7 +117,7 @@ describe('AddressBookService', () => {
       (error: any) => {}
     );
 
-    const req = httpMock.expectOne(`${service.API_URL}/api/People`);
+    const req = httpMock.expectOne(`${environment.api_url}/api/People`);
     expect(req.request.method).toBe('POST');
     req.flush(dummyPerson);
   });
@@ -130,8 +131,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       };
@@ -142,7 +143,7 @@ describe('AddressBookService', () => {
       (error: any) => {}
     );
 
-    const req = httpMock.expectOne(`${service.API_URL}/api/People/1`);
+    const req = httpMock.expectOne(`${environment.api_url}/api/People/1`);
     expect(req.request.method).toBe('PUT');
     req.flush(dummyPerson);
   });
@@ -156,8 +157,8 @@ describe('AddressBookService', () => {
         city: '',
         state: '',
         postalCode: '',
-        phone: '',
-        email: '',
+        interests: '',
+        age: null,
         imageName: '',
         imageData: '',
       };
@@ -168,7 +169,7 @@ describe('AddressBookService', () => {
       (error: any) => {}
     );
   
-    const req = httpMock.expectOne(`${service.API_URL}/api/People/1`);
+    const req = httpMock.expectOne(`${environment.api_url}/api/People/1`);
     expect(req.request.method).toBe('DELETE');
     req.flush(dummyPerson);
   });

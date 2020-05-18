@@ -1,51 +1,45 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatCardModule, MatChipsModule, MatIconModule, MatInputModule } from '@angular/material';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MatDialogModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { of } from 'rxjs';
 
-import { EditorComponent } from './editor.component';
+import { DetailsViewComponent } from './details-view.component';
 import { AddressBookService } from '../../services/address-book.service';
 import { Person } from '../../models/person.model';
 
-describe('EditorComponent', () => {
-  let component: EditorComponent;
-  let fixture: ComponentFixture<EditorComponent>;
+describe('DetailsViewComponent', () => {
+  let component: DetailsViewComponent;
+  let fixture: ComponentFixture<DetailsViewComponent>;
   let service: AddressBookService;
   const testPerson: Person = {
     firstName: 'John',
-    lastName: 'Doe',
-    interests: 'Unit Testing,Debugging',
+    lastName: 'Doe'
   };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorComponent ],
+      declarations: [ DetailsViewComponent ],
       imports: [
         NoopAnimationsModule,
         RouterTestingModule,
-        ReactiveFormsModule,
+        MatDialogModule,
         MatButtonModule,
-        MatFormFieldModule,
         MatCardModule,
-        MatChipsModule,
-        MatIconModule,
-        MatInputModule,
       ],
       providers: [
         {
           provide: AddressBookService,
           useValue: {
             getPerson: () => of(testPerson),
-            addPerson: () => of(testPerson),
-            updatePerson: () => of(testPerson),
+            removePerson: () => of(testPerson),
           }
-        }
+        },
       ]
     });
-    fixture = TestBed.createComponent(EditorComponent);
+
+    fixture = TestBed.createComponent(DetailsViewComponent);
     service = TestBed.get(AddressBookService);
     component = fixture.componentInstance;
     fixture.detectChanges();

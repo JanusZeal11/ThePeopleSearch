@@ -1,0 +1,21 @@
+.right {
+    float:right;
+}
+
+.mat-form-field {
+    margin-right: 1em;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.mat-card-content {
+    margin-left: 1em;
+    margin-right: 1em
+}
+
+.mat-card-action {
+    margin-left: 1em;
+    margin-right: 1em
+}

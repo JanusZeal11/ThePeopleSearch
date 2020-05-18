@@ -3,12 +3,6 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-a.title {
-  color: white;  
-}
-a.title:hover {
-  color: #69F0AE;
-}
 
 html {
   font-size: 14px;

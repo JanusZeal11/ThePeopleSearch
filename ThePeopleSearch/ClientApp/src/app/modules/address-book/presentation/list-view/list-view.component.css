@@ -30,10 +30,3 @@ td img {
     position: fixed;
     z-index: 998;
 }
-
-.mat-icon {
-    color: white;
-}
-.mat-icon:hover {
-  color: #69F0AE;
-}
