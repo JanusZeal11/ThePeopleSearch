@@ -2,9 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-![Build](https://github.com/JanusZeal11/ThePeopleSearch/workflows/Build/badge.svg)
-![.NET Core](https://github.com/JanusZeal11/ThePeopleSearch/workflows/.NET%20Core/badge.svg)
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
